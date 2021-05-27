@@ -13,6 +13,8 @@ class CountingPageSubHeader extends Component
         //Long live C99
         var lol = <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
+        var lol2 = <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
         if(this.props.visible_departments[0])
         {
             titles[0] = <div className={"pallet-counter-sub_header-title-dry"}><h2>Pallpatser{lol}Pall{lol}Halvpall{lol}Skrymme</h2></div>
@@ -27,7 +29,7 @@ class CountingPageSubHeader extends Component
         }
         if(this.props.visible_departments[3])
         {
-            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>Pallpatser{lol}Pall{lol}Halvpall{lol}Skrymme</h2></div></div>
+            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>Grå{lol2}Trä{lol2}Blå{lol2}Röd</h2></div></div>
         }
 
 

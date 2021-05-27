@@ -10,7 +10,8 @@ class Customer extends Component
         return(
         <div>
             <div className={"dol-gul-dur"}>
-                <p>{this.props.customer.customer_name}</p>
+                <h3>{this.props.customer.customer_number}<p>{this.props.customer.customer_name}</p></h3>
+                
             </div>            
                 <PalletCountingList key={0} counts={this.props.customer.counts} counting_control_id={this.props.customer.counting_control_id} visible_departments={this.props.visible_departments} Add={this.props.Add} Subtract={this.props.Subtract} Modify={this.props.Modify}/>   
             </div>

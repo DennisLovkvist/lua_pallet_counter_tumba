@@ -34,6 +34,10 @@
 
 
     --color-text-light: #FFFFFF;
+
+    --page-width: 2200px;
+    --scroll-x: 0px;
+    
   }
   .lol button{
 
@@ -108,16 +112,31 @@
 .pallet-counter-tumba
 {
   float:left;
-  width:4000px;
+  width:2200px;
   height:64px;
 }
-
+.space_cookies
+{
+  float:left;
+  height: 96px;
+  width:100%;
+  
+}
 .dol-gul-dur
 {
   float:left;
   width:128px;
+  
 }
-
+.dol-gul-dur p
+{  
+  font-size:xx-small;
+  margin-top: -4px;
+}
+.dol-gul-dur h3
+{
+   margin-top: 14px;
+}
 
 .department-checkbox
 {
@@ -130,15 +149,21 @@
 
 .pallet-counter-header
 {
-  width:4000px;
+  position:fixed;
+  width:var(--page-width);
   height:48px;
+
+  left: var(--scroll-x);
 
 }
 
 .pallet-counter-sub_header
 {
-  width:4000px;
+  position:fixed;
+  width:var(--page-width);
   height:48px;
+  padding-top: 48px;
+  left: var(--scroll-x);
 
 }
 
@@ -146,7 +171,7 @@
 {
   float:left;
   position:fixed;
-  width:4000px;
+  width:var(--page-width);
   height:64px;  
   bottom: 0px;
   background-color: var(--color-secondary-global);
@@ -254,7 +279,7 @@
     float: left;
     padding-top: 32px;
     padding-left: 16px;     
-    padding-right: 16px;   
+    padding-right: 16px; 
 }
 .count-list-item-dry-odd{
     background-color: var(--color-secondary-dry);
@@ -461,6 +486,7 @@
 
   display: inline;
   color:var(--color-text-light);
+  
 }
 .count-list-item-cold-odd h1{
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import Customer from './Customer'
 import CountingPageHeader from './CountingPageHeader'
 import CountingPageSubHeader from './CountingPageSubHeader'
@@ -10,7 +10,7 @@ class PalletCountingPage extends Component
     constructor(props) {
         super(props);
         this.state = {
-            
+            scroll_x:0,
             customers_source: [],
             customers: [],
             visible_department_dry:true,
@@ -80,11 +80,22 @@ class PalletCountingPage extends Component
 
 
 
-    componentDidMount() {
+    componentDidMount() 
+    {
        
         var today = this.GetDate();
         this.FetchSource(today,today,"111");
+        window.addEventListener('scroll', this.handleScroll);
     }
+    
+    handleScroll = () => {
+      var scrollLeft = window.pageXOffset;
+      if(scrollLeft != this.state.scroll_x)
+      {
+        this.setState({scroll_x: scrollLeft});
+      }
+    }
+
     GetCurrentDateString = () => {
     
         var today = new Date();    
@@ -148,8 +159,12 @@ class PalletCountingPage extends Component
        
 
         var hash = vt1 + "" + vt2 + "" +vt3;
-        hash = hash.replaceAll("true","1").replaceAll("false",0);
-
+        hash = hash.replace("true","1");
+	hash = hash.replace("true","1");
+	hash = hash.replace("true","1");
+	hash = hash.replace("false",0);
+	hash = hash.replace("false",0);
+	hash = hash.replace("false",0);
         var today = this.GetDate();
         this.FetchSource(today,today,hash);
 
@@ -161,7 +176,10 @@ class PalletCountingPage extends Component
                 customers: this.state.customers.map(customer => {
                     if (customer.id === counting_control_id) 
                     {
-                        customer.counts[index] = customer.counts[index] -1;        
+			if(customer.counts[index] > 0)
+			{
+                        	customer.counts[index] = customer.counts[index] -1; 
+			}       
                     }
                     return customer;
                 })
@@ -191,8 +209,6 @@ class PalletCountingPage extends Component
     render()
     {        
 
-        console.log(this.state.visible_department_dry);
-
         var department_flags = 
         [
             this.state.visible_department_dry,
@@ -200,15 +216,17 @@ class PalletCountingPage extends Component
             this.state.visible_department_frozen,
             this.state.visible_department_global
         ];
+        
 
+        document.documentElement.style.setProperty('--scroll-x', (-this.state.scroll_x + "px"));
+
+        console.log(this.state.scroll_x);
 
         return (
             
             <div>
                 
-                <div className={"pallet-counter-header"}> <CountingPageHeader visible_departments={department_flags}/></div>
-                <div className={"pallet-counter-sub_header"}> <CountingPageSubHeader visible_departments={department_flags}/></div>
-                
+                <div className={"space_cookies"}></div>
                 {this.state.customers.map((customer) => (
                     <div className={"pallet-counter-tumba"}>  
                         <Customer key={customer.counting_control_id} customer={customer} visible_departments={department_flags} Add={this.Add} Subtract={this.Subtract} Modify={this.Modify}/>
@@ -217,6 +235,10 @@ class PalletCountingPage extends Component
 
 
                 <div className={"pallet-counter-toolbar"}> <CountingPageToolbar CheckTumba={this.CheckTumba} CheckDepartment={this.CheckDepartment}/></div>
+
+                <div className={"pallet-counter-header"}> <CountingPageHeader visible_departments={department_flags}/></div>
+                <div className={"pallet-counter-sub_header"}> <CountingPageSubHeader visible_departments={department_flags}/></div>
+                
             
             </div>
             

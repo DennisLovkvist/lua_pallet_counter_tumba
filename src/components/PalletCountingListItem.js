@@ -48,8 +48,11 @@ console.log(request_options);
     }
     Subtract = () =>
     {
+	if(this.state.count > 0)
+	{
           var count = this.state.count -1;
           this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type,count);
+	}
     }
     Add = () =>
     {
