@@ -11,25 +11,25 @@ class CountingPageSubHeader extends Component
 
         //lol is an appripriate variable name. Web development is a complete joke.
         //Long live C99
-        var lol = <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        var lol = <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
         var lol2 = <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
         if(this.props.visible_departments[0])
         {
-            titles[0] = <div className={"pallet-counter-sub_header-title-dry"}><h2>Pallpatser{lol}Pall{lol}Halvpall{lol}Skrymme</h2></div>
+            titles[0] = <div className={"pallet-counter-sub_header-title-dry"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
         }
         if(this.props.visible_departments[1])
         {
-            titles[1] = <div className={"pallet-counter-header-title-cold"}><div><h2>Pallpatser{lol}Pall{lol}Halvpall{lol}Skrymme</h2></div></div>
+            titles[1] = <div className={"pallet-counter-header-title-cold"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
         }
         if(this.props.visible_departments[2])
         {
-            titles[2] = <div className={"pallet-counter-header-title-frozen"}><div><h2>Pallpatser{lol}Pall{lol}Halvpall{lol}Skrymme</h2></div></div>
+            titles[2] = <div className={"pallet-counter-header-title-frozen"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
         }
         if(this.props.visible_departments[3])
         {
-            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>Grå{lol2}Trä{lol2}Blå{lol2}Röd</h2></div></div>
+            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>Grå{lol}Trä{lol}Blå{lol}Röd</h2></div></div>
         }
 
 

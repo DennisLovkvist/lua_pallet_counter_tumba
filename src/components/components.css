@@ -32,11 +32,21 @@
     --color-count-list-item-global-hover: #474747;
     --color-count-list-item-global-active: #8f8f8f;
 
+    --counter-header-title-width:300px;
 
     --color-text-light: #FFFFFF;
 
     --page-width: 2200px;
     --scroll-x: 0px;
+
+    --count-list-item-pading:6px;
+
+    --count-list-item-size:24px;
+
+    --count-list-item-margin-top:6px;
+    --count-list-item-margin-bottom:6px;
+
+    --sub-header-width: calc(calc(var(--count-list-item-size)*12) + calc(var(--count-list-item-pading)*8));
     
   }
   .lol button{
@@ -48,7 +58,7 @@
     margin:0px 0px 0px 0px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px; 
+    font-size: 8px; 
     font-weight: bold;   
     height: 63px;
     width:33.33%;
@@ -87,7 +97,7 @@
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 0px 32px;
+    padding: 0px 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -113,7 +123,7 @@
 {
   float:left;
   width:2200px;
-  height:64px;
+  height:calc(var(--count-list-item-size)+var(--count-list-item-margin-bottom)+var(--count-list-item-margin-top));
 }
 .space_cookies
 {
@@ -126,16 +136,18 @@
 {
   float:left;
   width:128px;
+  height: 32px;
   
 }
 .dol-gul-dur p
 {  
-  font-size:xx-small;
+  font-size:8px;
   margin-top: -4px;
 }
 .dol-gul-dur h3
 {
-   margin-top: 14px;
+  margin-top: -2px;
+  font-size:16px;
 }
 
 .department-checkbox
@@ -182,7 +194,7 @@
   background-color: var(--color-secondary-dry);
   text-align: center;
   float: left;
-  width: 512px;
+  width: var(--sub-header-width);
   height:48px;
 }
 
@@ -207,7 +219,8 @@
   background-color: var(--color-secondary-dry);
   text-align: center;
   float: left;
-  width: 512px;
+  
+  width: var(--sub-header-width);
   height:48px;
 }
 .pallet-counter-header-title-cold
@@ -215,7 +228,7 @@
   background-color: var(--color-secondary-cold);
   text-align: center;
   float: left;
-  width: 512px;
+  width: var(--sub-header-width);
   height:48px;
 }
 .pallet-counter-header-title-frozen
@@ -223,7 +236,7 @@
   background-color: var(--color-secondary-frozen);
   text-align: center;
   float: left;
-  width: 512px;
+  width: var(--sub-header-width);
   height:48px;
 }
 .pallet-counter-header-title-global
@@ -231,7 +244,7 @@
   background-color: var(--color-secondary-global);
   text-align: center;
   float: left;
-  width: 512px;
+  width: var(--sub-header-width);
   height:48px;
 }
 
@@ -246,6 +259,7 @@
     display:block;   
     color:var(--color-text-light);
     margin-top: 8px;
+    
 }
 .pallet-counter-header-title-cold h2
 {
@@ -277,57 +291,27 @@
 .count-list-item-dry-even{
     background-color: var(--color-primary-dry);
     float: left;
-    padding-top: 32px;
-    padding-left: 16px;     
-    padding-right: 16px; 
-}
-.count-list-item-dry-odd{
-    background-color: var(--color-secondary-dry);
-    float: left;
-    padding-top: 32px;
-    padding-right: 16px; 
+    padding-left: var(--count-list-item-pading);     
+    padding-right: var(--count-list-item-pading);  
 }
 .count-list-item-cold-even{
     background-color: var(--color-primary-cold);
     float: left;
-    padding-top: 32px;
-    padding-left: 16px;      
-    padding-right: 16px; 
-}
-.count-list-item-cold-odd{
-    background-color: var(--color-secondary-cold);
-    float: left;
-    padding-top: 32px;  
-    padding-left: 16px;    
-    padding-right:16px; 
+    
+    padding-left: var(--count-list-item-pading);      
+    padding-right: var(--count-list-item-pading);   
 }
 .count-list-item-frozen-even{
     background-color: var(--color-primary-frozen);
-    float: left;
-    padding-top: 32px;  
-    padding-left: 16px;    
-    padding-right: 16px; 
-}
-.count-list-item-frozen-odd{
-    background-color: var(--color-secondary-frozen);
-    float: left;
-    padding-top: 32px; 
-    padding-left: 16px;     
-    padding-right: 16px; 
+    float: left; 
+    padding-left: var(--count-list-item-pading);     
+    padding-right: var(--count-list-item-pading); 
 }
 .count-list-item-global-even{
     background-color: var(--color-primary-global);
-    float: left;
-    padding-top: 32px; 
-    padding-left: 16px;     
-    padding-right: 16px;  
-}
-.count-list-item-global-odd{
-    background-color: var(--color-secondary-global);
-    float: left;
-    padding-top: 32px; 
-    padding-left: 16px;     
-    padding-right: 16px;  
+    float: left; 
+    padding-left: var(--count-list-item-pading);    
+    padding-right: var(--count-list-item-pading);  
 }
 
 
@@ -343,47 +327,28 @@
     display: inline;
     color:var(--color-text-light);
   }
-  .count-list-item-dry-odd h1{
-
-    display: inline;
-    color:var(--color-text-light);
-  }
   .count-list-item-dry-even button{
     background-color: var(--color-button-dry);
     border: none;
     color: white;
-    margin-top: -16px;
+    margin-top: var(--count-list-item-margin-top);
     padding: 0px 0px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;    
-    height: 32px;
-    width:32px;
+    height: var(--count-list-item-size);
+    width:var(--count-list-item-size);
     display: inline;
     float: right;
   }  
-  .count-list-item-dry-odd button{
-    background-color: var(--color-button-dry);
-    border: none;
-    color: white;
-    margin-top: -16px;
-    padding: 0px 0px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;    
-    height: 32px;
-    width:32px;
-    display: inline;
-    float: right;
-  } 
   .count-list-item-dry-even input[type=tel]{
     padding: 0;
-    height: 32px;
-    width:32px;
+    height:  var(--count-list-item-size);
+    width: var(--count-list-item-size);
     position: relative;
     text-align: center;
-    margin-top: -16px;
-    margin-bottom: 16px;
+    margin-top: var(--count-list-item-margin-top);
+    margin-bottom: var(--count-list-item-margin-bottom);
     left: 0;
     outline: none;
     border: 0px;
@@ -393,23 +358,6 @@
     display: inline;
     float: right;
   }  
-  .count-list-item-dry-odd input[type=tel]{
-    padding: 0;
-    height: 32px;
-    width:32px;
-    position: relative;
-    text-align: center;
-    margin-top: -16px;
-    margin-bottom: 16px;
-    left: 0;
-    outline: none;
-    border: 0px;  
-    border-color: rgba(0, 0, 0, .50);
-    background-color: white;
-    font-size: 16px;
-    display: inline;
-    float: right;
-  } 
 
   .count-list-item-dry-even button:hover{
 
@@ -488,47 +436,28 @@
   color:var(--color-text-light);
   
 }
-.count-list-item-cold-odd h1{
-
-  display: inline;
-  color:var(--color-text-light);
-}
 .count-list-item-cold-even button{
   background-color: var(--color-button-cold);
   border: none;
   color: white;
-  margin-top: -16px;
+  margin-top: var(--count-list-item-margin-top);
   padding: 0px 0px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;    
-  height: 32px;
-  width:32px;
+  height:  var(--count-list-item-size);
+  width: var(--count-list-item-size);
   display: inline;
   float: right;
 }  
-.count-list-item-cold-odd button{
-  background-color: var(--color-button-cold);
-  border: none;
-  color: white;
-  margin-top: -16px;
-  padding: 0px 0px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;    
-  height: 32px;
-  width:32px;
-  display: inline;
-  float: right;
-} 
 .count-list-item-cold-even input[type=tel]{
   padding: 0;
-  height: 32px;
-  width:32px;
+  height:  var(--count-list-item-size);
+  width: var(--count-list-item-size);
   position: relative;
   text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
+  margin-top: var(--count-list-item-margin-top);
+  margin-bottom: var(--count-list-item-margin-bottom);
   left: 0;
   outline: none;
   border: 0px;
@@ -538,24 +467,6 @@
   display: inline;
   float: right;
 }  
-.count-list-item-cold-odd input[type=tel]{
-  padding: 0;
-  height: 32px;
-  width:32px;
-  position: relative;
-  text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
-  left: 0;
-  outline: none;
-  border: 0px;
-  border-color: rgba(0, 0, 0, .50);
-  background-color: white;
-  font-size: 16px;
-  display: inline;
-  float: right;
-} 
-
 
 
 
@@ -568,47 +479,28 @@
   display: inline;
   color:var(--color-text-light);
 }
-.count-list-item-frozen-odd h1{
-
-  display: inline;
-  color:var(--color-text-light);
-}
 .count-list-item-frozen-even button{
   background-color: var(--color-button-frozen);
   border: none;
   color: white;
-  margin-top: -16px;
+  margin-top: var(--count-list-item-margin-top);
   padding: 0px 0px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;    
-  height: 32px;
-  width:32px;
+  height:  var(--count-list-item-size);
+  width: var(--count-list-item-size);
   display: inline;
   float: right;
 }  
-.count-list-item-frozen-odd button{
-  background-color: var(--color-button-frozen);
-  border: none;
-  color: white;
-  margin-top: -16px;
-  padding: 0px 0px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;    
-  height: 32px;
-  width:32px;
-  display: inline;
-  float: right;
-} 
 .count-list-item-frozen-even input[type=tel]{
   padding: 0;
-  height: 32px;
-  width:32px;
+  height: var(--count-list-item-size);
+  width: var(--count-list-item-size);
   position: relative;
   text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
+  margin-top: var(--count-list-item-margin-top);
+  margin-bottom: var(--count-list-item-margin-bottom);
   left: 0;
   outline: none;
   border: 0px;
@@ -619,42 +511,6 @@
   display: inline;
   float: right;
 }  
-.count-list-item-frozen-odd input[type=tel]{
-  padding: 0;
-  height: 32px;
-  width:32px;
-  position: relative;
-  text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
-  left: 0;
-  outline: none;
-  border: 0px;
-
-  border-color: rgba(0, 0, 0, .50);
-  background-color: white;
-  font-size: 16px;
-  display: inline;
-  float: right;
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -665,47 +521,28 @@
   display: inline;
   color:var(--color-text-light);
 }
-.count-list-item-global-odd h1{
-
-  display: inline;
-  color:var(--color-text-light);
-}
 .count-list-item-global-even button{
   background-color:var(--color-button-global);
   border: none;
   color: white;
-  margin-top: -16px;
+  margin-top: var(--count-list-item-margin-top);
   padding: 0px 0px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;    
-  height: 32px;
-  width:32px;
+  height: var(--count-list-item-size);
+  width:var(--count-list-item-size);
   display: inline;
   float: right;
 }  
-.count-list-item-global-odd button{
-  background-color: var(--color-button-global);
-  border: none;
-  color: white;
-  margin-top: -16px;
-  padding: 0px 0px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;    
-  height: 32px;
-  width:32px;
-  display: inline;
-  float: right;
-} 
 .count-list-item-global-even input[type=tel]{
   padding: 0;
-  height: 32px;
-  width:32px;
+  height: var(--count-list-item-size);
+  width:var(--count-list-item-size);
   position: relative;
   text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
+  margin-top: var(--count-list-item-margin-top);
+  margin-bottom: var(--count-list-item-margin-bottom);
   left: 0;
   outline: none;
   border: 0px;
@@ -716,21 +553,3 @@
   display: inline;
   float: right;
 }  
-.count-list-item-global-odd input[type=tel]{
-  padding: 0;
-  height: 32px;
-  width:32px;
-  position: relative;
-  text-align: center;
-  margin-top: -16px;
-  margin-bottom: 16px;
-  left: 0;
-  outline: none;
-  border: 0px;
-
-  border-color: rgba(0, 0, 0, .50);
-  background-color: white;
-  font-size: 16px;
-  display: inline;
-  float: right;
-} 

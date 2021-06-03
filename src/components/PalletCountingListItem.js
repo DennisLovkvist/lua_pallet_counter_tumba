@@ -41,18 +41,25 @@ console.log(request_options);
   }
 
 
-    myChangeHandler = (event) => {
+    ChangeTB = (event) => {
 
-        
+        //this.state.count = event.target.value;
+        var count = parseInt(event.target.value);
+
+        if(typeof count == 'number')
+        {       
+          this.setState({count: parseInt(count)});
+          this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type, parseInt(count));
+        }
             
     }
     Subtract = () =>
     {
-	if(this.state.count > 0)
-	{
-          var count = this.state.count -1;
-          this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type,count);
-	}
+        if(this.state.count > 0)
+        {
+                var count = this.state.count -1;
+                this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type,count);
+        }
     }
     Add = () =>
     {
@@ -93,7 +100,7 @@ console.log(request_options);
 
                 <div className={class_name}>               
                     <button onClick={this.Add}>+</button>      
-                    <input type="tel" value={this.state.count} onChange={this.myChangeHandler}/>    
+                    <input type="tel" value={this.state.count} onChange={this.ChangeTB}/>    
                     <button onClick={this.Subtract}>-</button>
                     
                  </div>   
