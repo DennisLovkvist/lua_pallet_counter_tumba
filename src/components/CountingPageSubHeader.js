@@ -17,19 +17,19 @@ class CountingPageSubHeader extends Component
 
         if(this.props.visible_departments[0])
         {
-            titles[0] = <div className={"pallet-counter-sub_header-title-dry"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
+            titles[0] = <div className={"pallet-counter-sub_header-title-dry"}><div><h2>PPL{lol}P&nbsp;&nbsp;{lol}HP&nbsp;{lol}S&nbsp;&nbsp;</h2></div></div>
         }
         if(this.props.visible_departments[1])
         {
-            titles[1] = <div className={"pallet-counter-header-title-cold"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
+            titles[1] = <div className={"pallet-counter-header-title-cold"}><div><h2>PPL{lol}P&nbsp;&nbsp;{lol}HP&nbsp;{lol}S&nbsp;&nbsp;</h2></div></div>
         }
         if(this.props.visible_departments[2])
         {
-            titles[2] = <div className={"pallet-counter-header-title-frozen"}><div><h2>PP{lol}PL{lol}HP{lol}SK</h2></div></div>
+            titles[2] = <div className={"pallet-counter-header-title-frozen"}><div><h2>PPL{lol}P&nbsp;&nbsp;{lol}HP&nbsp;{lol}S&nbsp;&nbsp;</h2></div></div>
         }
         if(this.props.visible_departments[3])
         {
-            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>Grå{lol}Trä{lol}Blå{lol}Röd</h2></div></div>
+            titles[3] = <div className={"pallet-counter-header-title-global"}><div><h2>PPL{lol}P&nbsp;&nbsp;{lol}HP&nbsp;{lol}S&nbsp;&nbsp;</h2></div></div>
         }
 
 
