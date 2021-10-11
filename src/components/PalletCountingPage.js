@@ -169,43 +169,6 @@ class PalletCountingPage extends Component
         this.FetchSource(today,today,hash);
 
     }
-
-    Subtract = (counting_control_id,index) => {
-            
-            this.setState({
-                customers: this.state.customers.map(customer => {
-                    if (customer.id === counting_control_id) 
-                    {
-			if(customer.counts[index] > 0)
-			{
-                        	customer.counts[index] = customer.counts[index] -1; 
-			}       
-                    }
-                    return customer;
-                })
-            })
-        
-    }
-    Add = (counting_control_id,department,index) => {
-
-        this.setState({
-            customers: this.state.customers.map(customer => {
-                if (customer.id === counting_control_id) 
-                {
-                    customer.counts[index] = customer.counts[index] +1;        
-                }
-                return customer;
-            })
-        })
-
-
-        console.log(counting_control_id);
-        console.log(department);
-        console.log(index);
-            
-        
-    }
-    
     render()
     {        
 

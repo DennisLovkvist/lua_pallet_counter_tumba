@@ -42,11 +42,12 @@
     --count-list-item-pading:6px;
 
     --count-list-item-size:24px;
+    --count-list-item-width:40px;
 
     --count-list-item-margin-top:6px;
     --count-list-item-margin-bottom:6px;
 
-    --sub-header-width: calc(calc(var(--count-list-item-size)*12) + calc(var(--count-list-item-pading)*8));
+    --sub-header-width: calc(calc(var(--count-list-item-width)*4) + calc(var(--count-list-item-size)*8) + calc(var(--count-list-item-pading)*8));
     
   }
   .lol button{
@@ -344,7 +345,7 @@
   .count-list-item-dry-even input[type=tel]{
     padding: 0;
     height:  var(--count-list-item-size);
-    width: var(--count-list-item-size);
+    width: var(--count-list-item-width);
     position: relative;
     text-align: center;
     margin-top: var(--count-list-item-margin-top);
@@ -358,6 +359,79 @@
     display: inline;
     float: right;
   }  
+
+  .count-list-item-dry-even input[type=number]{
+    padding: 0;
+    height:  var(--count-list-item-size);
+    width: var(--count-list-item-width);
+    position: relative;
+    text-align: center;
+    margin-top: var(--count-list-item-margin-top);
+    margin-bottom: var(--count-list-item-margin-bottom);
+    left: 0;
+    outline: none;
+    border: 0px;
+    border-color: rgba(0, 0, 0, .50);
+    background-color: white;
+    font-size: 16px;
+    display: inline;
+    float: right;
+  }  
+  .count-list-item-cold-even input[type=number]{
+    padding: 0;
+    height:  var(--count-list-item-size);
+    width: var(--count-list-item-width);
+    position: relative;
+    text-align: center;
+    margin-top: var(--count-list-item-margin-top);
+    margin-bottom: var(--count-list-item-margin-bottom);
+    left: 0;
+    outline: none;
+    border: 0px;
+    border-color: rgba(0, 0, 0, .50);
+    background-color: white;
+    font-size: 16px;
+    display: inline;
+    float: right;
+  }  
+  .count-list-item-frozen-even input[type=number]{
+    padding: 0;
+    height:  var(--count-list-item-size);
+    width: var(--count-list-item-width);
+    position: relative;
+    text-align: center;
+    margin-top: var(--count-list-item-margin-top);
+    margin-bottom: var(--count-list-item-margin-bottom);
+    left: 0;
+    outline: none;
+    border: 0px;
+    border-color: rgba(0, 0, 0, .50);
+    background-color: white;
+    font-size: 16px;
+    display: inline;
+    float: right;
+  }  
+  .count-list-item-global-even input[type=number]{
+    padding: 0;
+    height:  var(--count-list-item-size);
+    width: var(--count-list-item-width);
+    position: relative;
+    text-align: center;
+    margin-top: var(--count-list-item-margin-top);
+    margin-bottom: var(--count-list-item-margin-bottom);
+    left: 0;
+    outline: none;
+    border: 0px;
+    border-color: rgba(0, 0, 0, .50);
+    background-color: white;
+    font-size: 16px;
+    display: inline;
+    float: right;
+  }  
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 
   .count-list-item-dry-even button:hover{
 
@@ -453,7 +527,7 @@
 .count-list-item-cold-even input[type=tel]{
   padding: 0;
   height:  var(--count-list-item-size);
-  width: var(--count-list-item-size);
+  width: var(--count-list-item-width);
   position: relative;
   text-align: center;
   margin-top: var(--count-list-item-margin-top);
@@ -496,7 +570,7 @@
 .count-list-item-frozen-even input[type=tel]{
   padding: 0;
   height: var(--count-list-item-size);
-  width: var(--count-list-item-size);
+  width: var(--count-list-item-width);
   position: relative;
   text-align: center;
   margin-top: var(--count-list-item-margin-top);
@@ -538,7 +612,7 @@
 .count-list-item-global-even input[type=tel]{
   padding: 0;
   height: var(--count-list-item-size);
-  width:var(--count-list-item-size);
+  width:var(--count-list-item-width);
   position: relative;
   text-align: center;
   margin-top: var(--count-list-item-margin-top);

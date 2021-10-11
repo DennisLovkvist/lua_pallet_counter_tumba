@@ -43,14 +43,22 @@ console.log(request_options);
 
     ChangeTB = (event) => {
 
-        //this.state.count = event.target.value;
-        var count = parseInt(event.target.value);
 
-        if(typeof count == 'number')
-        {       
-          this.setState({count: parseInt(count)});
-          this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type, parseInt(count));
-        }
+      var raw = event.target.value.toString();
+      this.setState({count:raw})
+
+      var count = parseFloat(event.target.value);
+
+      count = Math.round(count / 0.5) * 0.5;
+
+      if(!isNaN(count))
+      {  
+          if(typeof count == 'number')
+          {                           
+              this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type, parseFloat(count));
+          }
+      }
+   
             
     }
     Subtract = () =>
@@ -58,15 +66,14 @@ console.log(request_options);
         if(this.state.count > 0)
         {
                 var count = this.state.count -1;
+                this.setState({count:count});
                 this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type,count);
         }
     }
     Add = () =>
     {
           var count = this.state.count +1;
-
-
-
+          this.setState({count:count});
           this.UpdateCount(this.props.counting_control_id,this.props.department,this.props.pallet_type,count);
     }
     render()
@@ -85,14 +92,18 @@ console.log(request_options);
               case 3:
                 class_name = "count-list-item-frozen-even";
               break;
-              //Special reserved for id 4. Unused at.
+              //Special reserved for id 4. Unused atm.
               case 5:
                 class_name = "count-list-item-global-even";
               break;
             default:
               
           }
-
+          var input_type = "tel";
+          if(this.props.pallet_type === 1)
+          {
+              input_type = "number";
+          }
         
 
         //For alternating colors
@@ -100,7 +111,7 @@ console.log(request_options);
 
                 <div className={class_name}>               
                     <button onClick={this.Add}>+</button>      
-                    <input type="tel" value={this.state.count} onChange={this.ChangeTB}/>    
+                    <input type={input_type} value={this.state.count} onChange={this.ChangeTB}/>    
                     <button onClick={this.Subtract}>-</button>
                     
                  </div>   
